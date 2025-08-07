@@ -2,6 +2,11 @@ function p_new = NewtonRaphson(f, df, p0, tol, N0)
     i = 1;
     p = p0;
 
+    % Graficamos la función para visualizar su comportamiento
+    x = linspace(-2, 2, 500);
+    y = f(x);
+    plot(x, y);
+    
     while i <= N0
         % Aplicamos la fórmula de Newton-Raphson
         p_new = p - (f(p)/df(p));
@@ -18,3 +23,4 @@ function p_new = NewtonRaphson(f, df, p0, tol, N0)
 
     fprintf('Method failed after %d iterations\n', N0);
 end
+
