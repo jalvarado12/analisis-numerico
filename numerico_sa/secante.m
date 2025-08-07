@@ -3,6 +3,11 @@ function p = secante(f, p0, p1, tol, N0)
     q0 = f(p0);
     q1 = f(p1);
 
+    % Graficamos la función para visualizar su comportamiento
+    x = linspace(-2, 2, 500);
+    y = f(x);
+    plot(x, y);
+
     while i <= N0
         p = p1 - q1 * ((p1 - p0)/(q1 - q0));  % Fórmula de la secante
 
