@@ -2,6 +2,11 @@ function p = bisectionMethod(f, a, b, tol, N0)
    i = 1;
    FA = f(a);  % Evaluamos f en el extremo izquierdo del intervalo
 
+   % Graficamos la función para visualizar su comportamiento
+    x = linspace(-2, 2, 500);
+    y = f(x);
+    plot(x, y);
+   
    while i <= N0
        p = a + (b - a)/2;   % Calculamos el punto medio del intervalo
        FP = f(p);           % Evaluamos f en el punto medio
@@ -26,3 +31,4 @@ function p = bisectionMethod(f, a, b, tol, N0)
    % Si llegamos aquí, el método falló en encontrar la raíz con la precisión requerida
    fprintf('Method failed after %d iterations\n', N0);
 end
+
