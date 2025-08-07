@@ -16,9 +16,11 @@ function sal = RTSafe(f, df, x1, x2, tol, N0)
     % Si ya estamos cerca de la raíz, retornamos directamente
     if abs(fx1) < tol
         sal = x1;
+        fprintf('La solución fue encontrada en 0 iteraciones en %d', x1); 
         return
     elseif abs(fx2) < tol
         sal = x2;
+        fprintf('La solución fue encontrada en 0 iteraciones en %d', x2);
         return
     end
 
@@ -45,6 +47,7 @@ function sal = RTSafe(f, df, x1, x2, tol, N0)
 
         if abs(dx) < tol
             sal = rts;
+            fprintf('Número de iteraciones: %d\n', i);
             return
         end
 
@@ -60,3 +63,4 @@ function sal = RTSafe(f, df, x1, x2, tol, N0)
 
     fprintf('Method failed after %d iterations\n', N0);
 end
+
